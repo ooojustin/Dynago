@@ -1,0 +1,5 @@
+<project outputDir="[directory]" baseDir="[directory]" xmlns="http://confuser.codeplex.com">
+  <module path="[filename]">
+    <rule pattern="true" preset="[preset]" inherit="false" />
+  </module>
+</project>
