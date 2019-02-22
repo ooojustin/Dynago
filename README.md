@@ -8,7 +8,7 @@ Concept:
 
 Future development:
 
-> Transfer pre-compiling randomization such as variable name randomization to my own custom obfuscation.
+> Transfer pre-compiling randomization such as variable name randomization to my own custom obfuscation. Use mono/dnlib instead of string manipulation.
 
 ## Notes
 
