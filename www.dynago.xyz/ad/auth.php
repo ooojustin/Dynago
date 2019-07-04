@@ -3,13 +3,13 @@
 	ini_set('log_errors', 1);
 	ini_set('display_errors', 0);
 
-	include secret_directory('config.php'); // SQL Server stuff
+	include 'config.php'; // SQL Server stuff
 	$server_server = $config['server'];
 	$server_username = $config['username'];
 	$server_password = $config['password'];
 	$server_dbname = $config['dbname'];
 
-	try 
+	try
 	{
 		$conn = new PDO('mysql:host=' . $server_server . ';dbname=' . $server_dbname, $server_username, $server_password,[PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC]);
 	} catch (PDOException $e) {
@@ -21,12 +21,12 @@
 
 	// $userId, $publicKey, $secretKey
 	$adfly = new AdflyInst(0, '', '');
-	
+
 	authAD($_GET['id'], $adfly);
 
 	function authAD($id, $adfly) {
 		$conn = $GLOBALS['conn'];
-		$checkID = $conn->prepare("SELECT * FROM ad WHERE id=:id"); 
+		$checkID = $conn->prepare("SELECT * FROM ad WHERE id=:id");
 		$checkID->bindValue(':id', $id);
 		$checkID->execute();
 		$result = $checkID->fetch();
@@ -52,10 +52,6 @@
 		} else {
 			echo $message_page;
 		}
-	}
-
-	function secret_directory($fileName) {
-		return '../XyZ2esqYfx/' . $fileName;
 	}
 
 	function prepend($string, $orig_filename) {

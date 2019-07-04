@@ -21,7 +21,7 @@ class AuthType {
 class AdflyInst {
 	const BASE_HOST = 'api.adf.ly';
 	const HMAC_ALGO = 'sha256';
-	
+
 	private $userId = 0;
 	private $publicKey = '';
 	private $secretKey = '';
@@ -58,17 +58,17 @@ class AdflyInst {
 
 	public function expand(array $urls, array $hashes=array()) {
 		$params = array();
-			
+
 		$i = 0;
 		foreach ($urls as $url) {
 			$params[sprintf('url[%d]', $i++)] = $url;
 		}
-			
+
 		$i = 0;
 		foreach ($hashes as $hash) {
 			$params[sprintf('hash[%d]', $i++)] = $hash;
 		}
-			
+
 		return json_decode($this->connection->doGet('v1/expand',$this->getParams($params)),1);
 	}
 
@@ -79,23 +79,23 @@ class AdflyInst {
 		if ($groupId !== false) $params['group_id'] = $groupId;
 		if ($title !== false) $params['title'] = $title;
 		if ($customName !== false) $params['custom_name'] = $customName;
-		
+
 		$i = 0;
 		foreach ($urls as $url) {
 			$params[sprintf('url[%d]', $i++)] = $url;
 		}
-			
+
 		return $this->connection->doPost('v1/shorten',$this->getParams($params));
 	}
 
 	public function getUrls($page=1, $q=null) {
 		$params = array();
 		//$params['_page'] = $page;
-		
+
 		if ($q) {
 			$params['q'] = $q;
 		}
-			
+
 		return json_decode($this->connection->doGet('v1/urls',$this->getParams($params, AuthType::HMAC)),1);
 	}
 
@@ -213,14 +213,14 @@ class AdflyInst {
 
 	public function updateUrl($id, $url=false, $advertType=false, $title=false, $groupId=false, $fbDescription=false, $fbImage=false) {
 		$params = array();
-			
+
 		if ($url !== false) $params['url'] = $url;
 		if ($advertType !== false) $params['advert_type'] = $advertType;
 		if ($title !== false) $params['title'] = $title;
 		if ($groupId !== false) $params['group_id'] = $groupId;
 		if ($fbDescription !== false) $params['fb_description'] = $fbDescription;
 		if ($fbImage !== false) $params['fb_image'] = $fbImage;
-			
+
 		return json_decode($this->connection->doPut('v1/urls/' . $id,$this->getParams($params, AuthType::HMAC)),1);
 	}
 
