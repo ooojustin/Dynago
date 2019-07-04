@@ -12,7 +12,7 @@ Future development:
 
 ## Notes
 
-* This project is not actively being developed as of April 2018 - please fork it to make modifications.
+* This project is not actively being developed as of July 2019 - please fork it to make modifications.
 
 ## Authors
 
