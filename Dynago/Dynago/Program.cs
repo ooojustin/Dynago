@@ -48,7 +48,7 @@ namespace Dynago {
                 MessageBox.Show("Application must be executed as administrator.", "Dynago", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Environment.Exit(0);
             }
-            Program.newestVersion = Networking.GetData("newest_version");
+            /*Program.newestVersion = Networking.GetData("newest_version");
             bool isUpdating = false;
             if (Convert.ToSingle(Program.newestVersion, format) > Convert.ToSingle(Program.currentVersion, format)) {
                 DialogResult result = DialogResult.None;
@@ -64,7 +64,8 @@ namespace Dynago {
                 }
             }
             Console.WriteLine(directory);
-            if (!isUpdating) new Forms.Login().Show();
+            if (!isUpdating) new Forms.Login().Show();*/
+            new Forms.Main().Show();
             Application.Run();
         }
 

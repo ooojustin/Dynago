@@ -24,7 +24,7 @@
                 switch (/*rnd*/var_ModuleName/*rnd*/)
                 {
                     /*order-start*/
-                    /*order-*/case "client.dll": /*rnd*/var_ClientAddress/*rnd*/  = (int) /*rnd*/var_Module/*rnd*/.BaseAddress; break;/*order-*/
+                    /*order-*/case "client_panorama.dll": /*rnd*/var_ClientAddress/*rnd*/  = (int) /*rnd*/var_Module/*rnd*/.BaseAddress; break;/*order-*/
                     /*order-*/case "engine.dll": /*rnd*/var_EngineAddress/*rnd*/ = (int) /*rnd*/var_Module/*rnd*/.BaseAddress; break;/*order-*/
                     /*order-*/default:
                     /*junk_line*/
