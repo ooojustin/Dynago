@@ -1,6 +1,6 @@
 # Dynago
 
-External .NET CSGO Cheat
+External .NET CSGO Cheat which produces unique builds via advanced methods of obfuscation.
 
 Concept:
 
